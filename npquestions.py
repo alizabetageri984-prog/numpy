@@ -40,3 +40,32 @@ random_10x10 = np.random.random((10, 10))
 print(random_10x10)
 print("Minimum:", random_10x10.min())
 print("Maximum:", random_10x10.max())
+
+#example, Q14 is:Create a random vector of size 30 and find the mean value.
+random_array = np.random.random(30)
+print(random_array.mean())
+#Create a 2D array of shape (5, 5) where the border elements are 1 and the inside elements are 0.
+import numpy as np
+
+nums = np.ones((5, 5))
+
+nums[1:4, 1:4] = 0
+
+print(nums)
+#Q16 🟢Given an existing 2D array, add a border of zeros around it.
+nums = np.ones((3, 3))
+bordered_nums = np.pad(nums, pad_width=1, mode="constant", constant_values=0)
+#np.pad() is a NumPy function used to add extra elements around an array
+#mode="constant"Means:Fill the new border with one fixed value.
+print(bordered_nums)
+#NumPy NaN and Infinity
+import numpy as np
+
+print(np.nan)
+print(np.inf)
+print(-np.inf)
+#Q18: Create a 5×5 NumPy matrix where the values below the main diagonal are 1, 2, 3, 4 respectively, and all other values are 0.
+
+
+nums = np.arange(4, -1, -1)
+print(nums)
