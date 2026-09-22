@@ -67,5 +67,51 @@ print(-np.inf)
 #Q18: Create a 5×5 NumPy matrix where the values below the main diagonal are 1, 2, 3, 4 respectively, and all other values are 0.
 
 
-nums = np.arange(4, -1, -1)
+nums = np.zeros((5, 5), dtype=int)
+nums[1, 0] = 1
+nums[2, 0] = 2
+nums[2, 1] = 1
+nums[3, 0] = 3
+nums[3, 1] = 2
+nums[3, 2] = 1
+nums[4, 0] = 4
+nums[4, 1] = 3
+nums[4, 2] = 2
+nums[4, 3] = 1
+print(nums)
+#Q19 — Create an 8×8 NumPy matrix with a checkerboard pattern of 0 and 1
+checkerboard = np.zeros((8, 8), dtype=int)
+checkerboard[::2, 1::2] = 1
+checkerboard[1::2, ::2] = 1
+print(checkerboard)
+#Create a NumPy array with shape (6, 7, 8) and find the index (position) of the 100th element.
+array_6x7x8 = np.arange(6 * 7 * 8).reshape(6, 7, 8)
+hundredth_index = np.unravel_index(99, array_6x7x8.shape)
+print("Index of the 100th element:", hundredth_index)
+#reate an 8×8 checkerboard pattern of 0 and 1 using np.tile().
+checkerboard_tiled = np.tile([[0, 1], [1, 0]], (4, 4)) #np.tile(pattern, repetitions)
+print(checkerboard_tiled)
+#Q22:Normalize a 5×5 random NumPy matrix so that its values are between 0 and 1.
+random_matrix = np.random.random((5, 5))
+normalized_matrix = (random_matrix - random_matrix.min()) / (random_matrix.max() - random_matrix.min())
+print(normalized_matrix)
+
+#Q23Create a 5×5 matrix with values 0 and 1 in a checkerboard pattern, then swap the 0s and 1s.
+checkerboard_5x5 = np.indices((5, 5)).sum(axis=0) % 2
+swapped_checkerboard = 1 - checkerboard_5x5
+print(swapped_checkerboard)
+#Create a 5×5 matrix with 1s on the border and 0s inside.
+nums = np.zeros((5, 5))
+bordered_nums = np.pad(nums, pad_width=1, mode="constant", constant_values=1)
+print(bordered_nums)
+
+import numpy as np
+
+nums = np.zeros((5, 5), dtype=int)
+
+nums[0, :] = 1
+nums[-1, :] = 1
+nums[:, 0] = 1
+nums[:, -1] = 1
+
 print(nums)
