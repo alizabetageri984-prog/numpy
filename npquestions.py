@@ -115,3 +115,37 @@ nums[:, 0] = 1
 nums[:, -1] = 1
 
 print(nums)
+
+#Q25 — NumPyGiven a 1D array, negate all elements that are between 3 and 8, in place.
+nums = np.array([1, 4, 6, 9, 2, 8])
+nums[(nums > 3) & (nums <= 8)] *= -1
+print(nums)
+#Q26 — NumPyCreate a 5×5 matrix with values 0 and 1 in a checkerboard pattern, starting with 1 in the top-left corner
+checkerboard_5x5 = 1 - (np.indices((5, 5)).sum(axis=0) % 2)
+
+print(swapped_checkerboard)
+
+#Q27 — NumPy Find the value closest to a given number in a NumPy array.
+nums = np.array([1, 5, 10, 15, 20])
+target = 12
+closest_value = nums[np.abs(nums - target).argmin()]#abs means absolute value — it removes the negative sign.
+print("Closest value:", closest_value)#argmin() finds the index of the smallest value.
+
+#Q28 — NumPy Create a 5×5 matrix with random values, then find the minimum and maximum values.
+nums = np.random.random((5, 5))
+print(nums)
+print("Minimum:", nums.min())
+print("Maximum:", nums.max())
+
+#Q29 — NumPy Create a 5×5 matrix with 1s on the diagonal and 0s everywhere else.
+diagonal_matrix = np.eye(5, dtype=int) #np.eye() creates an identity matrix.
+print(diagonal_matrix)
+#Q30 — NumPy Create a 5×5 matrix with 0s on the main diagonal and 1s everywhere else.
+import numpy as np 
+import numpy as np 
+
+diagonal_matrix = np.eye(5, k=1, dtype=int)
+
+
+
+print(diagonal_matrix)
