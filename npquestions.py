@@ -146,6 +146,48 @@ import numpy as np
 
 diagonal_matrix = np.eye(5, k=1, dtype=int)
 
-
-
 print(diagonal_matrix)
+#Q31 — NumPy Create a 5×5 matrix with 1s on the main diagonal and 2s on the diagonal above it.
+diagonal_matrix = np.eye(5, dtype=int) + np.diag([2] * 4, k=1)
+print(diagonal_matrix)
+#Q32 — NumPy Create a 5×5 matrix with 1s on the main diagonal and 2s on the diagonal below it
+diagonal_matrix = np.eye(5, dtype=int) + np.diag([2] * 4, k=-1)
+print(diagonal_matrix)
+#Q33 — NumPy Create a 5×5 matrix with 1s on the border and 0s inside.
+import numpy as np
+
+nums = np.zeros((5, 5), dtype=int)
+
+nums[0, :] = 1
+nums[-1, :] = 1
+nums[:, 0] = 1
+nums[:, -1] = 1
+
+print(nums)
+#Q34 — NumPy Create a 5×5 matrix with 0s on the border and 1s inside
+nums = np.ones((3, 3))
+
+bordered_nums = np.pad(
+    nums,
+    pad_width=1,
+    mode="constant",
+    constant_values=0
+)
+
+print(bordered_nums)
+#Q35 — NumPy Create a 5×5 matrix where the values increase from 0 to 24 row by row.
+matrix_5x5 = np.arange(25).reshape(5, 5)
+print(matrix_5x5)
+#next question 
+#Q37 — NumPy Create a 5×5 matrix where each row contains the numbers 0, 1, 2, 3, 4
+matrix_5x5 = np.tile(np.arange(5), (5, 1))
+print(matrix_5x5)
+#Q38 — NumPy Create a 5×5 matrix where each column contains the numbers 0, 1, 2, 3, 4
+matrix_5x5 = np.tile(np.arange(5).reshape(5, 1), (1, 5))
+print(matrix_5x5)
+#Q39 — NumPy Create a 5×5 matrix where each element is the sum of its row index and column index
+matrix_5x5 = np.indices((5, 5)).sum(axis=0)
+print(matrix_5x5)
+#Q40 — NumPyCreate a 5×5 matrix where each row contains the numbers 1, 2, 3, 4, 5. 
+matrix_5x5 = np.tile(np.arange(1, 6), (5, 1))
+print(matrix_5x5)
